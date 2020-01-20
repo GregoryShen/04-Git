@@ -1,0 +1,46 @@
+分支管理：
+分支作用：保存目前工作进度，不影响别人工作，协同工作
+创建分支：git branch <branch-name>
+切换分支：git checkout <branch-name>
+创建并切换到新分支：git checkout -b <new branch-name>
+查看所有分支：git branch (带*的为当前分支)
+合并指定分支到当前分支
+1.快速合并：git merge <branch-name> 如果冲突首先解决冲突，然后合并
+2.普通合并：git merge --no-ff <branch-name>
+区别：1合并后没有记录，2有
+查看分支合并情况：git graph --pretty=oneline --abbrev-commit
+删除分支：1.删除已经合并过的：git branch -d <branch-name>
+2.删除没合并过的：git branch -D <branch-name>
+--------------------------------------------
+远程仓库
+1.创建SSH Key：
+首先在用户主目录下查看是否有.ssh文件夹，如果有则继续查看其中是否有id.rsa（私钥）和id_rsa.pub(公钥)
+如果没有则创建ssh key：
+keygen
+
+-------------------------------------------
+标签管理
+
+标签就是版本库的一个快照，分支可以移动，标签不可以。标签和commit是绑定的，引入tag的意义在于便于记忆
+
+创建标签：1.切换到需要打标签的分支上：git checkout <branch-name>
+          2.创建标签：git tag <tag-name>
+            带说明的创建：git tag -a <tag-name> -m "xxxx" <commit-id>
+            如果是对默认最新提交创建标签呢： git tag -a <tag-name> -m "xxxx"
+            在之前的提交上创建：1.首先找到想要创建标签的commit-id：git log --pretty=oneline --abbrev-commit
+                                2.创建标签：git tag -a <tag-name> -m "xxxx" <commit-id>
+            创建带有私钥的标签：git tag -s <tag-name> -m "xxxx" <commit-id>
+
+查看所有标签：git tag
+
+查看标签信息：git show <tag-name>
+
+推送标签：单个推送：git push origin <tag-name>
+          一次性推送全部未推送：git push origin --tags
+
+删除tag：本地删除：git tag -d <tag-name>
+         远程删除：1.先在本地删除：git tag -d <tag-name>
+                   2.远程删除：git push origin:refs/tags/<tag-name>
+---------------------------------------------------------------------
+源码安装：
+首先从Git官网下载源码，然后解压，依次输入./config, make, sudo make install就安装好了

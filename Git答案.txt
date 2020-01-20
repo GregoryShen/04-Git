@@ -1,0 +1,202 @@
+安装Git & 自定义Git
+
+1. 直接在命令行输入git查看系统是否有安装Git
+2. sudo apt-get install git
+   ./config --> make --> sudo make install
+3. git config --global user.name "Your Name"
+   git config --global user.email "email@example.com"
+4. git config --global color.ui true
+5. 在Git工作区的根目录下创建
+6. 检验.gitignore 的标准是执行git status 命令是不是working directary clean.
+7. git add -f App.class
+8. git check-ignore -v App.class
+9. git config --global alias.<short-name> <full-name>
+10. .git/config
+    在用户主目录下的一个隐藏文件.gitconfig中
+11.git config --list
+---------------------------------------------------------
+
+创建版本库
+
+1. 1）创建一个空目录（或者切换到一个已有内容的目录也可以）
+   2）git init （当下目录会多出一个.git的隐藏目录）
+2. 目录下会多一个.git 的目录，用来跟踪管理版本库的。
+3. git add <filename>
+   git commit -m "xxxx"
+4. 可以多次添加，一次提交
+5. git status
+6. git diff <filename>
+   git diff HEAD -- <filename>
+---------------------------------------------------------
+
+版本切换
+
+1. git log
+   git log --pretty=oneline
+2. git reset --hard commit_id
+3. 当前版本：HEAD
+   上一个版本：HEAD^
+   上上个版本HEAD^^
+   其他版本HEAD~n
+4. git reflog
+5. git checkout -- <filename>
+   用版本库里的版本替换工作区的版本
+6. 把暂存区的修改退回到工作区：git reset HEAD <filename>
+   丢弃工作区的修改：git checkout -- <filename>
+7. 版本回退 git rest --hard commit_id(前提是没把本地库推送到远程)
+8. git rm <filename>
+   git commit -m "xxxx"
+9. git checkout -- <filename>
+
+---------------------------------------------------------
+ 远程仓库
+
+1. 1）在用户主目录下查看是否有.ssh 目录，如果有，再查看是否有id_rsa和id_rsa.pub。
+   2）如果没有则用ssh-keygen -t rsa -C "yourmail@example.com" 创建
+   3）其中id_rsa是私钥，id_rsa.pub是公钥
+2. 公钥 id_rsa.pub
+3. 1) 关联远程仓库：git remote add origin git@github.com:path/repo-name.git
+   2) 把本地仓库内容推送到远程库
+      第一次推送：git push -u origin master
+      以后的推送：git push origin master
+4. ssh: git clone git@github.com:path/repo-name.git
+   http: git clone https://github.com:path/repo-name.git
+      
+---------------------------------------------------------
+分支管理
+
+1. 多人协作不冲突，保存进度
+2. git branch <name>
+3. git checkout <name>
+4. git checkout -b <name>
+5. git branch
+   带星号的表明是当前所在分支
+6. git merge <name>
+7. 先解决冲突，然后提交，再合并
+8. git merge --no-ff -m "xxx" <branch-name>
+9. 普通合并后合并历史能看出曾经做过的合并，快速合并不可以
+10.git --graph --pretty=oneline --abbrev-commit
+11.git branch -d <name>
+12.git branch -D <name>
+13. git stash 存储当前工作现场
+    git status 查看当前工作区是否干净
+    git checkout <branch-name> 切换到待修复分支
+    git checkout -b <bug-name>
+    git add <filename>
+    git commit -m "xxx"
+    git checkout <branch-name> 切换回之前的分支
+    git merge --no-ff -m "xxxx" <bug-branch-name>
+    git branch -d <bug-branch-name>
+    git checkout <branch-name> 切换回刚才工作的分支
+    git stash list  查看之前保存的工作现场
+    1) git stash apply stash@{0}
+       git stash drop
+    2) git statsh pop
+14. git remote
+    git remote -v
+15. git push <remote-repo> <branch-name>
+16. git pull
+17. git checkout -b <branch-name> <remote-repo>/<branch-name>
+18. git branch --set-upstream <local-branch> <remo-repo>/<branch-name>
+19. 1)首先git pull 拉取最新commit
+    2）如果提示 no tracking information则需要建立本地分支和远程分支的对应关系 参见18，然后再git pull
+    3) 解决冲突，提交，再推送
+
+---------------------------------------------------------
+多人协作
+
+1. git remote
+   git remote -v
+2. git push <remote-repo> <branch-name>
+3. git checkout -b <branch-name> origin/<branch-name>
+4.    
+
+---------------------------------------------------------
+标签管理
+
+
+1. 标签是版本库的一个快照；分支可以移动，标签不能移动；标签就是指向某个commit的指针；
+   tag就是一个让人容易记住的有意义的名字，它跟某个commit绑在一起。
+
+2. 普通创建：git tag <tag-name>
+   带说明的创建： git tag -a <tag-name> -m "说明文字" <commit-id>
+   在之前的提交上创建：git log --pretty=oneline --abbrev-commit
+                       git tag <tag-name> <commit-id>
+   创建带有私钥签名的标签：git tag -s <tag-name> -m "说明文字" <commit-id>
+
+3. git tag
+
+4. git show <tag-name>
+
+5. 单个推送：git push origin <tag-name>
+   一次性推送所有未同步：git push origin --tags
+
+6. 本地删除：git tag -d <tag-name>
+   删除远程标签：git tag -d <tag-name>
+                 git push origin:refs/tags/<tag-name>
+
+---------------------------------------------------------
+自定义Git
+
+1. git config --global color.ui true
+
+2. git add -f <filename>
+
+3. git check-ignore -v <filename>
+
+4. git config --global alias. <shortname><command>
+
+5. 放在.git/config文件中
+
+6. 当前用户主目录下的一个隐藏文件.gitconfig中
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

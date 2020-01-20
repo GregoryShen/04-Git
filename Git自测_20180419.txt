@@ -1,0 +1,102 @@
+安装Git & 自定义Git
+----------------------
+1.在命令行下运行git即可知道是否安装
+2.Ubuntu/Debian: sudo apt-get install git
+
+  源码安装：./config--> make --> install make
+==> ./congig --> make --> sudo make install
+
+3.git config --global user.name "Your name"
+  git config --global user.email "your@mail.com"
+4.git config --global color.ui true
+5.在工作区的根目录下
+
+6.添加一个文件到暂存区查看是否可以提交成功
+==>执行git status 命令是不是working directory clean
+
+7.git add -f App.class
+8.git check-ignore -v App.class
+9.git config alias.<name> "manipulation"
+
+10.仓库的配置文件是放在.git下的.git/.gitconfig
+   当前用户的Git配置文件是放在用户主目录下的
+==>仓库的配置文件在.git/config
+   当前用户的配置文件在用户主目录下的.gitconfig
+
+11.==> git config --list
+
+创建版本库
+--------------------------
+1.新建一个目录，切换到该目录，执行git init
+2.会生成一个隐藏文件夹.git，这个是git的版本库
+3.git add <file>
+  git commit -m "xxxx"
+4.多次添加 一次提交
+5.git status
+
+6.git diff HEAD <file>
+  git diff 
+==>git diff <file>
+   git diff HEAD -- <filename>
+
+版本切换
+------------------
+1. git log
+   git log --pretty=oneline
+2. git reset --hard <commit_id>
+3. HEAD HEAD^ HEAD^^ HEAD~n
+4. git reflog
+
+5. ==>git chekcout -- <file>
+
+   本质是用版本库中的文件替换工作区的文件
+6. git reset HEAD <file>
+   然后再执行撤销工作区的修改
+7. 回退到上一版本（前提是没推送到远程库）git reset --hard HEAD^
+
+8. 先从本地删除，然后从版本库中删除git rm <file>
+==> 删除的操作还要提交的 git commit -m "xxx"
+
+9. 指回上一版本：git reset --hard HEAD^
+==> 删错了是指在工作区删除 但还没提交，这个时候只要丢弃工作区的
+    修改就好了 git checkout -- <file>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

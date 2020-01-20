@@ -1,0 +1,123 @@
+2017.04.20
+--------------------------------
+版本切换
+--------------------------------
+1. 普通查看：git log 
+   列表查看：git log --pretty-line
+2. git rest --HRAD <commit-id>
+3. 当前版本：HEAD
+   上一个版本：HEAD^
+   上上个版本：HEAD^^
+   其他版本：HEAD^n
+4. git log
+5. git reset --checkout
+   本质上是回退到版本库的那个版本
+6. 回退到上一个版本：git reset --HARD HEAD^
+   丢弃工作区的修改：git reset --checkout
+7.
+8. git delete <filename>
+   git commit -m "xxxx"
+9  git reset --HARD <commit-id>
+
+----------------------------------------
+出错的地方：
+1 列表查看commit历史：--pretty参数为--pretty=oneline,之前考虑改过，但是不确定，所以放弃了。
+  然后对于查看commit历史和查看git操作历史记忆不清楚
+
+2. 版本回退的时候 --hard参数为小写 不是大写
+
+3. 其他版本：HEAD~n
+
+4. 查看git历史命令就完全不记得 git reflog
+
+5. 丢弃工作区修改完全错误，应该是 git checkout -- <filename>
+   本质也回答错误，本质是用版本库里的版本替换工作区的版本
+
+6. 第一步不对，应该是把暂存区回退到工作区，不是回退到上一版本，但是命令思路是对的：git reset HEAD <filename>
+   丢弃工作区的修改命令不对，应该是 git checkout -- <filename>
+
+7.  版本回退 git reset --hard <commit-id> (前提是没有把本地库推送到远程)
+
+8. 就是完全错误：git rm <filename>
+
+9. 删错了就撤销工作区的修改：git checkout -- <filename>
+---------------------------------------------------------
+2017.04.27
+--------------------------------
+远程仓库
+--------------------------------
+1. 在用户主文件夹下查看是否有.ssh文件夹，然后查看是否有id_rsa.pub（公钥） 和id_rsa（私钥）
+   创建：keygen -t ssh 
+2. 公钥添加到GitHub
+3. 先建立本地库和远程库的连接，然后把本地库推送到远程库
+4. git clone ssh:git@github.com:<useranme>/<repo-name>
+   git clone http://github.com:<useranme>/<repo-name>
+
+--------------------------------
+出错的地方：
+1. 公钥和私钥的记忆不是很确定，事实上公钥确实是id_rsa.pub，私钥是id_rsa
+   创建sshkey的命令完全忘记：ssh-keygen -t rsa -C "youremail@example.com"
+   
+3. 思路是对的，就是先把本地库关联到远程库：git remote add origin git@github.com:path/repo-name.git
+   然后把本地库内容推送到远程库
+   第一次推送：git push -u origin master
+   以后的推送：git push origin master
+
+4. ssh方法是错的，应该是：git clone git@github.com:path/repo-name.git
+   http方法应该是https： git clone https://github.com:path/repo-name.git
+--------------------------------
+创建版本库
+
+1. git init
+2. 会增加一个隐藏文件夹.git
+3. git add <file-name>
+   git commit -m "xxxx"
+4. 多次添加，一次提交
+5. git status
+6. git diff
+
+--------------------------------
+出错的地方：
+1. 首先要创建一个空目录
+
+6. 查看文件修改内容是错的
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
