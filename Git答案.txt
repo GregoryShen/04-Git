@@ -1,94 +1,94 @@
-°²×°Git & ×Ô¶¨ÒåGit
+ï»¿å®‰è£…Git & è‡ªå®šä¹‰Git
 
-1. Ö±½ÓÔÚÃüÁîĞĞÊäÈëgit²é¿´ÏµÍ³ÊÇ·ñÓĞ°²×°Git
+1. ç›´æ¥åœ¨å‘½ä»¤è¡Œè¾“å…¥gitæŸ¥çœ‹ç³»ç»Ÿæ˜¯å¦æœ‰å®‰è£…Git
 2. sudo apt-get install git
    ./config --> make --> sudo make install
 3. git config --global user.name "Your Name"
    git config --global user.email "email@example.com"
 4. git config --global color.ui true
-5. ÔÚGit¹¤×÷ÇøµÄ¸ùÄ¿Â¼ÏÂ´´½¨
-6. ¼ìÑé.gitignore µÄ±ê×¼ÊÇÖ´ĞĞgit status ÃüÁîÊÇ²»ÊÇworking directary clean.
+5. åœ¨Gitå·¥ä½œåŒºçš„æ ¹ç›®å½•ä¸‹åˆ›å»º
+6. æ£€éªŒ.gitignore çš„æ ‡å‡†æ˜¯æ‰§è¡Œgit status å‘½ä»¤æ˜¯ä¸æ˜¯working directary clean.
 7. git add -f App.class
 8. git check-ignore -v App.class
 9. git config --global alias.<short-name> <full-name>
 10. .git/config
-    ÔÚÓÃ»§Ö÷Ä¿Â¼ÏÂµÄÒ»¸öÒş²ØÎÄ¼ş.gitconfigÖĞ
+    åœ¨ç”¨æˆ·ä¸»ç›®å½•ä¸‹çš„ä¸€ä¸ªéšè—æ–‡ä»¶.gitconfigä¸­
 11.git config --list
 ---------------------------------------------------------
 
-´´½¨°æ±¾¿â
+åˆ›å»ºç‰ˆæœ¬åº“
 
-1. 1£©´´½¨Ò»¸ö¿ÕÄ¿Â¼£¨»òÕßÇĞ»»µ½Ò»¸öÒÑÓĞÄÚÈİµÄÄ¿Â¼Ò²¿ÉÒÔ£©
-   2£©git init £¨µ±ÏÂÄ¿Â¼»á¶à³öÒ»¸ö.gitµÄÒş²ØÄ¿Â¼£©
-2. Ä¿Â¼ÏÂ»á¶àÒ»¸ö.git µÄÄ¿Â¼£¬ÓÃÀ´¸ú×Ù¹ÜÀí°æ±¾¿âµÄ¡£
+1. 1ï¼‰åˆ›å»ºä¸€ä¸ªç©ºç›®å½•ï¼ˆæˆ–è€…åˆ‡æ¢åˆ°ä¸€ä¸ªå·²æœ‰å†…å®¹çš„ç›®å½•ä¹Ÿå¯ä»¥ï¼‰
+   2ï¼‰git init ï¼ˆå½“ä¸‹ç›®å½•ä¼šå¤šå‡ºä¸€ä¸ª.gitçš„éšè—ç›®å½•ï¼‰
+2. ç›®å½•ä¸‹ä¼šå¤šä¸€ä¸ª.git çš„ç›®å½•ï¼Œç”¨æ¥è·Ÿè¸ªç®¡ç†ç‰ˆæœ¬åº“çš„ã€‚
 3. git add <filename>
    git commit -m "xxxx"
-4. ¿ÉÒÔ¶à´ÎÌí¼Ó£¬Ò»´ÎÌá½»
+4. å¯ä»¥å¤šæ¬¡æ·»åŠ ï¼Œä¸€æ¬¡æäº¤
 5. git status
 6. git diff <filename>
    git diff HEAD -- <filename>
 ---------------------------------------------------------
 
-°æ±¾ÇĞ»»
+ç‰ˆæœ¬åˆ‡æ¢
 
 1. git log
    git log --pretty=oneline
 2. git reset --hard commit_id
-3. µ±Ç°°æ±¾£ºHEAD
-   ÉÏÒ»¸ö°æ±¾£ºHEAD^
-   ÉÏÉÏ¸ö°æ±¾HEAD^^
-   ÆäËû°æ±¾HEAD~n
+3. å½“å‰ç‰ˆæœ¬ï¼šHEAD
+   ä¸Šä¸€ä¸ªç‰ˆæœ¬ï¼šHEAD^
+   ä¸Šä¸Šä¸ªç‰ˆæœ¬HEAD^^
+   å…¶ä»–ç‰ˆæœ¬HEAD~n
 4. git reflog
 5. git checkout -- <filename>
-   ÓÃ°æ±¾¿âÀïµÄ°æ±¾Ìæ»»¹¤×÷ÇøµÄ°æ±¾
-6. °ÑÔİ´æÇøµÄĞŞ¸ÄÍË»Øµ½¹¤×÷Çø£ºgit reset HEAD <filename>
-   ¶ªÆú¹¤×÷ÇøµÄĞŞ¸Ä£ºgit checkout -- <filename>
-7. °æ±¾»ØÍË git rest --hard commit_id(Ç°ÌáÊÇÃ»°Ñ±¾µØ¿âÍÆËÍµ½Ô¶³Ì)
+   ç”¨ç‰ˆæœ¬åº“é‡Œçš„ç‰ˆæœ¬æ›¿æ¢å·¥ä½œåŒºçš„ç‰ˆæœ¬
+6. æŠŠæš‚å­˜åŒºçš„ä¿®æ”¹é€€å›åˆ°å·¥ä½œåŒºï¼šgit reset HEAD <filename>
+   ä¸¢å¼ƒå·¥ä½œåŒºçš„ä¿®æ”¹ï¼šgit checkout -- <filename>
+7. ç‰ˆæœ¬å›é€€ git rest --hard commit_id(å‰ææ˜¯æ²¡æŠŠæœ¬åœ°åº“æ¨é€åˆ°è¿œç¨‹)
 8. git rm <filename>
    git commit -m "xxxx"
 9. git checkout -- <filename>
 
 ---------------------------------------------------------
- Ô¶³Ì²Ö¿â
+ è¿œç¨‹ä»“åº“
 
-1. 1£©ÔÚÓÃ»§Ö÷Ä¿Â¼ÏÂ²é¿´ÊÇ·ñÓĞ.ssh Ä¿Â¼£¬Èç¹ûÓĞ£¬ÔÙ²é¿´ÊÇ·ñÓĞid_rsaºÍid_rsa.pub¡£
-   2£©Èç¹ûÃ»ÓĞÔòÓÃssh-keygen -t rsa -C "yourmail@example.com" ´´½¨
-   3£©ÆäÖĞid_rsaÊÇË½Ô¿£¬id_rsa.pubÊÇ¹«Ô¿
-2. ¹«Ô¿ id_rsa.pub
-3. 1) ¹ØÁªÔ¶³Ì²Ö¿â£ºgit remote add origin git@github.com:path/repo-name.git
-   2) °Ñ±¾µØ²Ö¿âÄÚÈİÍÆËÍµ½Ô¶³Ì¿â
-      µÚÒ»´ÎÍÆËÍ£ºgit push -u origin master
-      ÒÔºóµÄÍÆËÍ£ºgit push origin master
+1. 1ï¼‰åœ¨ç”¨æˆ·ä¸»ç›®å½•ä¸‹æŸ¥çœ‹æ˜¯å¦æœ‰.ssh ç›®å½•ï¼Œå¦‚æœæœ‰ï¼Œå†æŸ¥çœ‹æ˜¯å¦æœ‰id_rsaå’Œid_rsa.pubã€‚
+   2ï¼‰å¦‚æœæ²¡æœ‰åˆ™ç”¨ssh-keygen -t rsa -C "yourmail@example.com" åˆ›å»º
+   3ï¼‰å…¶ä¸­id_rsaæ˜¯ç§é’¥ï¼Œid_rsa.pubæ˜¯å…¬é’¥
+2. å…¬é’¥ id_rsa.pub
+3. 1) å…³è”è¿œç¨‹ä»“åº“ï¼šgit remote add origin git@github.com:path/repo-name.git
+   2) æŠŠæœ¬åœ°ä»“åº“å†…å®¹æ¨é€åˆ°è¿œç¨‹åº“
+      ç¬¬ä¸€æ¬¡æ¨é€ï¼šgit push -u origin master
+      ä»¥åçš„æ¨é€ï¼šgit push origin master
 4. ssh: git clone git@github.com:path/repo-name.git
    http: git clone https://github.com:path/repo-name.git
       
 ---------------------------------------------------------
-·ÖÖ§¹ÜÀí
+åˆ†æ”¯ç®¡ç†
 
-1. ¶àÈËĞ­×÷²»³åÍ»£¬±£´æ½ø¶È
+1. å¤šäººåä½œä¸å†²çªï¼Œä¿å­˜è¿›åº¦
 2. git branch <name>
 3. git checkout <name>
 4. git checkout -b <name>
 5. git branch
-   ´øĞÇºÅµÄ±íÃ÷ÊÇµ±Ç°ËùÔÚ·ÖÖ§
+   å¸¦æ˜Ÿå·çš„è¡¨æ˜æ˜¯å½“å‰æ‰€åœ¨åˆ†æ”¯
 6. git merge <name>
-7. ÏÈ½â¾ö³åÍ»£¬È»ºóÌá½»£¬ÔÙºÏ²¢
+7. å…ˆè§£å†³å†²çªï¼Œç„¶åæäº¤ï¼Œå†åˆå¹¶
 8. git merge --no-ff -m "xxx" <branch-name>
-9. ÆÕÍ¨ºÏ²¢ºóºÏ²¢ÀúÊ·ÄÜ¿´³öÔø¾­×ö¹ıµÄºÏ²¢£¬¿ìËÙºÏ²¢²»¿ÉÒÔ
+9. æ™®é€šåˆå¹¶ååˆå¹¶å†å²èƒ½çœ‹å‡ºæ›¾ç»åšè¿‡çš„åˆå¹¶ï¼Œå¿«é€Ÿåˆå¹¶ä¸å¯ä»¥
 10.git --graph --pretty=oneline --abbrev-commit
 11.git branch -d <name>
 12.git branch -D <name>
-13. git stash ´æ´¢µ±Ç°¹¤×÷ÏÖ³¡
-    git status ²é¿´µ±Ç°¹¤×÷ÇøÊÇ·ñ¸É¾»
-    git checkout <branch-name> ÇĞ»»µ½´ıĞŞ¸´·ÖÖ§
+13. git stash å­˜å‚¨å½“å‰å·¥ä½œç°åœº
+    git status æŸ¥çœ‹å½“å‰å·¥ä½œåŒºæ˜¯å¦å¹²å‡€
+    git checkout <branch-name> åˆ‡æ¢åˆ°å¾…ä¿®å¤åˆ†æ”¯
     git checkout -b <bug-name>
     git add <filename>
     git commit -m "xxx"
-    git checkout <branch-name> ÇĞ»»»ØÖ®Ç°µÄ·ÖÖ§
+    git checkout <branch-name> åˆ‡æ¢å›ä¹‹å‰çš„åˆ†æ”¯
     git merge --no-ff -m "xxxx" <bug-branch-name>
     git branch -d <bug-branch-name>
-    git checkout <branch-name> ÇĞ»»»Ø¸Õ²Å¹¤×÷µÄ·ÖÖ§
-    git stash list  ²é¿´Ö®Ç°±£´æµÄ¹¤×÷ÏÖ³¡
+    git checkout <branch-name> åˆ‡æ¢å›åˆšæ‰å·¥ä½œçš„åˆ†æ”¯
+    git stash list  æŸ¥çœ‹ä¹‹å‰ä¿å­˜çš„å·¥ä½œç°åœº
     1) git stash apply stash@{0}
        git stash drop
     2) git statsh pop
@@ -98,12 +98,12 @@
 16. git pull
 17. git checkout -b <branch-name> <remote-repo>/<branch-name>
 18. git branch --set-upstream <local-branch> <remo-repo>/<branch-name>
-19. 1)Ê×ÏÈgit pull À­È¡×îĞÂcommit
-    2£©Èç¹ûÌáÊ¾ no tracking informationÔòĞèÒª½¨Á¢±¾µØ·ÖÖ§ºÍÔ¶³Ì·ÖÖ§µÄ¶ÔÓ¦¹ØÏµ ²Î¼û18£¬È»ºóÔÙgit pull
-    3) ½â¾ö³åÍ»£¬Ìá½»£¬ÔÙÍÆËÍ
+19. 1)é¦–å…ˆgit pull æ‹‰å–æœ€æ–°commit
+    2ï¼‰å¦‚æœæç¤º no tracking informationåˆ™éœ€è¦å»ºç«‹æœ¬åœ°åˆ†æ”¯å’Œè¿œç¨‹åˆ†æ”¯çš„å¯¹åº”å…³ç³» å‚è§18ï¼Œç„¶åå†git pull
+    3) è§£å†³å†²çªï¼Œæäº¤ï¼Œå†æ¨é€
 
 ---------------------------------------------------------
-¶àÈËĞ­×÷
+å¤šäººåä½œ
 
 1. git remote
    git remote -v
@@ -112,31 +112,31 @@
 4.    
 
 ---------------------------------------------------------
-±êÇ©¹ÜÀí
+æ ‡ç­¾ç®¡ç†
 
 
-1. ±êÇ©ÊÇ°æ±¾¿âµÄÒ»¸ö¿ìÕÕ£»·ÖÖ§¿ÉÒÔÒÆ¶¯£¬±êÇ©²»ÄÜÒÆ¶¯£»±êÇ©¾ÍÊÇÖ¸ÏòÄ³¸öcommitµÄÖ¸Õë£»
-   tag¾ÍÊÇÒ»¸öÈÃÈËÈİÒ×¼Ç×¡µÄÓĞÒâÒåµÄÃû×Ö£¬Ëü¸úÄ³¸öcommit°óÔÚÒ»Æğ¡£
+1. æ ‡ç­¾æ˜¯ç‰ˆæœ¬åº“çš„ä¸€ä¸ªå¿«ç…§ï¼›åˆ†æ”¯å¯ä»¥ç§»åŠ¨ï¼Œæ ‡ç­¾ä¸èƒ½ç§»åŠ¨ï¼›æ ‡ç­¾å°±æ˜¯æŒ‡å‘æŸä¸ªcommitçš„æŒ‡é’ˆï¼›
+   tagå°±æ˜¯ä¸€ä¸ªè®©äººå®¹æ˜“è®°ä½çš„æœ‰æ„ä¹‰çš„åå­—ï¼Œå®ƒè·ŸæŸä¸ªcommitç»‘åœ¨ä¸€èµ·ã€‚
 
-2. ÆÕÍ¨´´½¨£ºgit tag <tag-name>
-   ´øËµÃ÷µÄ´´½¨£º git tag -a <tag-name> -m "ËµÃ÷ÎÄ×Ö" <commit-id>
-   ÔÚÖ®Ç°µÄÌá½»ÉÏ´´½¨£ºgit log --pretty=oneline --abbrev-commit
+2. æ™®é€šåˆ›å»ºï¼šgit tag <tag-name>
+   å¸¦è¯´æ˜çš„åˆ›å»ºï¼š git tag -a <tag-name> -m "è¯´æ˜æ–‡å­—" <commit-id>
+   åœ¨ä¹‹å‰çš„æäº¤ä¸Šåˆ›å»ºï¼šgit log --pretty=oneline --abbrev-commit
                        git tag <tag-name> <commit-id>
-   ´´½¨´øÓĞË½Ô¿Ç©ÃûµÄ±êÇ©£ºgit tag -s <tag-name> -m "ËµÃ÷ÎÄ×Ö" <commit-id>
+   åˆ›å»ºå¸¦æœ‰ç§é’¥ç­¾åçš„æ ‡ç­¾ï¼šgit tag -s <tag-name> -m "è¯´æ˜æ–‡å­—" <commit-id>
 
 3. git tag
 
 4. git show <tag-name>
 
-5. µ¥¸öÍÆËÍ£ºgit push origin <tag-name>
-   Ò»´ÎĞÔÍÆËÍËùÓĞÎ´Í¬²½£ºgit push origin --tags
+5. å•ä¸ªæ¨é€ï¼šgit push origin <tag-name>
+   ä¸€æ¬¡æ€§æ¨é€æ‰€æœ‰æœªåŒæ­¥ï¼šgit push origin --tags
 
-6. ±¾µØÉ¾³ı£ºgit tag -d <tag-name>
-   É¾³ıÔ¶³Ì±êÇ©£ºgit tag -d <tag-name>
+6. æœ¬åœ°åˆ é™¤ï¼šgit tag -d <tag-name>
+   åˆ é™¤è¿œç¨‹æ ‡ç­¾ï¼šgit tag -d <tag-name>
                  git push origin:refs/tags/<tag-name>
 
 ---------------------------------------------------------
-×Ô¶¨ÒåGit
+è‡ªå®šä¹‰Git
 
 1. git config --global color.ui true
 
@@ -146,9 +146,9 @@
 
 4. git config --global alias. <shortname><command>
 
-5. ·ÅÔÚ.git/configÎÄ¼şÖĞ
+5. æ”¾åœ¨.git/configæ–‡ä»¶ä¸­
 
-6. µ±Ç°ÓÃ»§Ö÷Ä¿Â¼ÏÂµÄÒ»¸öÒş²ØÎÄ¼ş.gitconfigÖĞ
+6. å½“å‰ç”¨æˆ·ä¸»ç›®å½•ä¸‹çš„ä¸€ä¸ªéšè—æ–‡ä»¶.gitconfigä¸­
 
 
 
