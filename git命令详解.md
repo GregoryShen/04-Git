@@ -87,6 +87,12 @@ Git用（HEAD -> master）和（origin/master）标识出当前分支的HEAD和�
 
 
 
+## Rebase
+
+多人在同一个分支上协作时, 很容易出现冲突. 即使没有冲突, 后push的同学不得不先pull, 在本地合并, 然后才能push成功.
+
+
+
 
 
 
